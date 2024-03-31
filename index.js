@@ -43,6 +43,10 @@ mongoose.connect(DB).then(() => {
 //     res.json({hi:"hello world"});
 // });
 
+app.use('/vercel', (req , res) => {
+    res.json({hi:"hello world"});
+});
+
 app.listen(PORT , "0.0.0.0" , () => { // as the android devices will not able to access , so we will define the IP(this IP(0.0.0.0) can be accessible to any device).
     // console.log('connected at port ' + PORT);
     console.log(`connected at port ${PORT}`); // `(BackTick) is used to implement string interpolation( ${PORT} ). 
