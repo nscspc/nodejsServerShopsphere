@@ -123,7 +123,7 @@ userRouter.post("/api/save-user-address", authMiddleware, async (req, res) => {
     }
   });
   
-  userRouter.get("/api/orders/me", auth, async (req, res) => {
+  userRouter.get("/api/orders/me", authMiddleware, async (req, res) => {
     try {
       const orders = await Order.find({ userId: req.user });
       res.json(orders);
