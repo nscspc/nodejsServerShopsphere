@@ -74,7 +74,7 @@ userRouter.delete('/api/remove-from-cart/:id' , authMiddleware , async (req , re
 });
 
 // save user address
-userRouter.post("/api/save-user-address", auth, async (req, res) => {
+userRouter.post("/api/save-user-address", authMiddleware, async (req, res) => {
     try {
       const { address } = req.body;
       let user = await User.findById(req.user);
@@ -87,7 +87,7 @@ userRouter.post("/api/save-user-address", auth, async (req, res) => {
   });
   
   // order product
-  userRouter.post("/api/order", auth, async (req, res) => {
+  userRouter.post("/api/order", authMiddleware, async (req, res) => {
     try {
       const { cart, totalPrice, address } = req.body;
       let products = [];
