@@ -31,12 +31,12 @@ const orderSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
-  images:[
-    {
-        type: String,
-        required:true,
-    }
-  ],
+  // images:[
+  //   {
+  //       type: String,
+  //       required:true,
+  //   }
+  // ],
 });
 
 const Order = mongoose.model("Order", orderSchema);
