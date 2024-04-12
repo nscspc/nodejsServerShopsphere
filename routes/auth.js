@@ -30,7 +30,7 @@ authRouter.post('/api/signup' , async (req , res) => {
     const hashedPassword = await bcryptjs.hash(password , 8); // 8 is the salt
 
     // In Javascript everything is an OBJECT , just like In Flutter everything is WIDGET.
-    let user = new User({ // lel OR var because it cannot be const.
+    let user = new User({ // let OR var because it cannot be const.
         email,
         password:hashedPassword, //password, previously it was passed like simply by "password" because the name of the parameter in User module is also "password" but now it is "hashedPassword" , so now we have to specify the parameter also.
         name,
