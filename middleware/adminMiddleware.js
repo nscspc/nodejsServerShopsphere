@@ -15,9 +15,9 @@ const adminMiddleware = async(req , res , next) => {
         }
 
         const user = await User.findById(verified.id);
-        if(user.type == "user" || user.type == "admin")
+        if(user.type == "user")
         {
-            return res.status(401).json({msg : 'You are not an admin !'});
+            return res.status(401).json({msg : 'You are not an seller !'});
         }
 
         req.user = verified.id;
